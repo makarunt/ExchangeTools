@@ -8,6 +8,7 @@ Exchange writes a new SMTP Receive Protocol log file every hour. When troublesho
 PowerShell 5.0 or higher
 Read access to the Exchange SMTP Receive Protocol log folder
 Microsoft Exchange Server 2013 / 2016 / 2019 (log format version 15.x)
+
 ## Parameters
 Parameter	Required	Description
 -LogPath	No	Path to the folder containing .log files. Defaults to the standard Exchange V15 SmtpReceive log path.
@@ -16,29 +17,30 @@ Parameter	Required	Description
 -Connector	No	Filter results to a specific connector name (partial, case-insensitive match).
 -ExcludeIP	No	One or more IP addresses to exclude from the report (e.g. known Edge Transport servers).
 -ExportCsv	No	Full path to export detailed results as a CSV file. A matching _summary.txt file is created automatically in the same folder.
+
 ## Usage
 
 ```powershell
-### Run with default settings (last 5 hours, default log path)
+# Run with default settings (last 5 hours, default log path)
 .\Get-ExchangeConnectorTraffic.ps1
 
-### Analyse the last 12 hours
+# Analyse the last 12 hours
 .\Get-ExchangeConnectorTraffic.ps1 -Hours 12
 
-### Analyse the last 3 days
+# Analyse the last 3 days
 .\Get-ExchangeConnectorTraffic.ps1 -Days 3
 
-### Filter to a specific connector
+# Filter to a specific connector
 .\Get-ExchangeConnectorTraffic.ps1 -Hours 5 -Connector "Anon Relay"
 
-### Exclude known infrastructure IPs (e.g. Edge Transport servers)
+# Exclude known infrastructure IPs (e.g. Edge Transport servers)
 .\Get-ExchangeConnectorTraffic.ps1 -Hours 5 -ExcludeIP "10.1.1.10","10.1.1.11"
 
-### Export results to CSV (summary file is created automatically)
+# Export results to CSV (summary file is created automatically)
 .\Get-ExchangeConnectorTraffic.ps1 -Days 7 -ExportCsv "C:\Reports\traffic.csv"
 
-### Use a custom log path
+# Use a custom log path
 .\Get-ExchangeConnectorTraffic.ps1 -LogPath "D:\ExchangeLogs\SmtpReceive" -Hours 24
 
-### Combine options
+# Combine options
 .\Get-ExchangeConnectorTraffic.ps1 -Days 3 -Connector "Anon Relay" -ExcludeIP "10.1.1.10" -ExportCsv "C:\Reports\traffic.csv"
