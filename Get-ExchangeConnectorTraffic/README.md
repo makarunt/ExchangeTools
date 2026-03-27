@@ -17,6 +17,8 @@ Parameter	Required	Description
 -ExcludeIP	No	One or more IP addresses to exclude from the report (e.g. known Edge Transport servers).
 -ExportCsv	No	Full path to export detailed results as a CSV file. A matching _summary.txt file is created automatically in the same folder.
 ## Usage
+
+```powershell
 ### Run with default settings (last 5 hours, default log path)
 .\Get-ExchangeConnectorTraffic.ps1
 
