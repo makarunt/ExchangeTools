@@ -12,7 +12,7 @@ Microsoft Exchange Server 2013 / 2016 / 2019 (log format version 15.x)
 ## Parameters
 
 | Parameter | Required | Description |
-| :---- | :----: | :---- |
+| :--- | :---: | :--- |
 | `-LogPath` | No | Path to the folder containing `.log` files. Defaults to the standard Exchange V15 SmtpReceive log path. |
 | `-Hours` | No | Number of hours back to analyse. Cannot be combined with `-Days`. Defaults to `5` hours if neither is specified. |
 | `-Days` | No | Number of days back to analyse. Cannot be combined with `-Hours`. |
