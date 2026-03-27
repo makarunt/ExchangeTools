@@ -10,13 +10,15 @@ Read access to the Exchange SMTP Receive Protocol log folder
 Microsoft Exchange Server 2013 / 2016 / 2019 (log format version 15.x)
 
 ## Parameters
-Parameter	Required	Description
--LogPath	No	Path to the folder containing .log files. Defaults to the standard Exchange V15 SmtpReceive log path.
--Hours	No	Number of hours back to analyse. Cannot be combined with -Days. Defaults to 5 hours if neither is specified.
--Days	No	Number of days back to analyse. Cannot be combined with -Hours.
--Connector	No	Filter results to a specific connector name (partial, case-insensitive match).
--ExcludeIP	No	One or more IP addresses to exclude from the report (e.g. known Edge Transport servers).
--ExportCsv	No	Full path to export detailed results as a CSV file. A matching _summary.txt file is created automatically in the same folder.
+
+| Parameter | Required | Description |
+| :--- | :---: | :--- |
+| `-LogPath` | No | Path to the folder containing `.log` files. Defaults to the standard Exchange V15 SmtpReceive log path. |
+| `-Hours` | No | Number of hours back to analyse. Cannot be combined with `-Days`. Defaults to `5` hours if neither is specified. |
+| `-Days` | No | Number of days back to analyse. Cannot be combined with `-Hours`. |
+| `-Connector` | No | Filter results to a specific connector name (partial, case-insensitive match). |
+| `-ExcludeIP` | No | One or more IP addresses to exclude from the report (e.g. known Edge Transport servers). |
+| `-ExportCsv` | No | Full path to export detailed results as a CSV file. A matching `_summary.txt` file is created automatically. |
 
 ## Usage
 
