@@ -1,4 +1,4 @@
-Get-ExchangeConnectorTraffic
+# Get-ExchangeConnectorTraffic
 A PowerShell script for analyzing Microsoft Exchange SMTP Receive connector protocol logs. It identifies and reports actual mail traffic — showing sender address, recipient(s), source IP, and connector name — for any configurable time window.
 
 Overview
