@@ -1,14 +1,14 @@
 # Get-ExchangeConnectorTraffic
 A PowerShell script for analyzing Microsoft Exchange SMTP Receive connector protocol logs. It identifies and reports actual mail traffic — showing sender address, recipient(s), source IP, and connector name — for any configurable time window.
 
-Overview
+## Overview
 Exchange writes a new SMTP Receive Protocol log file every hour. When troubleshooting mail flow or auditing which systems are sending mail through your receive connectors, manually inspecting these logs is time-consuming. This script automates that process by parsing the raw log files, correlating SMTP session data, and producing both a detailed report and an executive summary grouped by server, connector, and source IP.
 
-Requirements
+## Requirements
 PowerShell 5.0 or higher
 Read access to the Exchange SMTP Receive Protocol log folder
 Microsoft Exchange Server 2013 / 2016 / 2019 (log format version 15.x)
-Parameters
+## Parameters
 Parameter	Required	Description
 -LogPath	No	Path to the folder containing .log files. Defaults to the standard Exchange V15 SmtpReceive log path.
 -Hours	No	Number of hours back to analyse. Cannot be combined with -Days. Defaults to 5 hours if neither is specified.
@@ -16,7 +16,7 @@ Parameter	Required	Description
 -Connector	No	Filter results to a specific connector name (partial, case-insensitive match).
 -ExcludeIP	No	One or more IP addresses to exclude from the report (e.g. known Edge Transport servers).
 -ExportCsv	No	Full path to export detailed results as a CSV file. A matching _summary.txt file is created automatically in the same folder.
-Usage
+## Usage
 # Run with default settings (last 5 hours, default log path)
 .\Get-ExchangeConnectorTraffic.ps1
 
